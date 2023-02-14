@@ -1,3 +1,5 @@
+package Gestores;
+
 import org.apache.commons.net.ftp.FTPClient;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,8 +16,6 @@ public class GestorFTP {
     private static final String USUARIO = "ismael";
 
     private static final String PASSWORD = "A123456a";
-
-    static Calendar now = Calendar.getInstance();
 
     public static void subirArchivo(File archivo){
 
