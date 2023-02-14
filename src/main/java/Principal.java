@@ -1,11 +1,6 @@
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
 public class Principal {
 
@@ -13,7 +8,9 @@ public class Principal {
 
         String jsonRecibido = GestorPeticionesAPI.realizaPeticion("https://random.dog/woof.json");
 
-        File imagenDescargada = GestorPeticionesAPI.descargaImagen(jsonRecibido);
+        File imagenDescargada = GestorPeticionesAPI.descargaArchivo(jsonRecibido);
+
+        GestorFTP.subirArchivo(imagenDescargada);
 
 
 

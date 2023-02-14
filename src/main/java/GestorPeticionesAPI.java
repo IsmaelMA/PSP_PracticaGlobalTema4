@@ -33,7 +33,7 @@ public class GestorPeticionesAPI {
         return respuesta;
     }
 
-    public static File descargaImagen(String json) throws IOException, URISyntaxException {
+    public static File descargaArchivo(String json) throws IOException, URISyntaxException {
 
         File imagen = null;
         Gson gson = new Gson();
@@ -41,9 +41,10 @@ public class GestorPeticionesAPI {
         JsonObject jsonRecibido = gson.fromJson(json, JsonObject.class);
         String urlImagen = jsonRecibido.get("url").toString();
         String urlImagenFixed = urlImagen.replaceAll("\"", "");
+        String sufijo = urlImagenFixed.substring(urlImagenFixed.lastIndexOf(".") + 1);
         System.out.println(urlImagenFixed);
 
-        imagen = new File("src/main/java/imagen_descargada/descarga.png");
+        imagen = new File("src/main/java/imagen_descargada/descarga." + sufijo);
         FileUtils.copyURLToFile(new URL(urlImagenFixed), imagen);
         return imagen;
 
