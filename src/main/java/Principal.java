@@ -19,11 +19,9 @@ public class Principal {
 
         GestorEmail gestorEmail = new GestorEmail();
 
-        gestorEmail.enviarMensajeConAdjunto("imalara353@g.educaand.es","ismaelma1996@gmail.com","Prueba de envío de email","Esto es una prueba desde intellij",imagenDescargada);
+        File capturaPantalla = new File("src/main/java/capturaPantallaFTP/carpetaFTP.png");
 
-
-
-
+        gestorEmail.enviarMensajeConAdjunto("imalara353@g.educaand.es", "rvilbri995@g.educaand.es", "Prueba Global Tema 4 - Ismael Maldonado", jsonRecibido, capturaPantalla);
 
 
     }

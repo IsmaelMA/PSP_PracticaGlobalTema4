@@ -1,6 +1,7 @@
 package Gestores;
 
 import org.apache.commons.net.ftp.FTPClient;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class GestorFTP {
 
     private static final String PASSWORD = "A123456a";
 
-    public static void subirArchivo(File archivo){
+    public static void subirArchivo(File archivo) {
 
         String remotePath = "/";
 
